@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.backgroud{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #aaaaaa;
+}
+
+.backgroud form  {
+    width: 450px;
+    font-size: 18px;
+}
+
+.backgroud form h1 {
+    text-align: center;
+}
+
+form .input-form {
+    width: 100%;
+}
+
+form .input-form input {
+    width: 100%;
+    padding: 3%;
+    font-size: 16px;
+}
+
+form .btn button {
+    width: 100%;
+    padding: 3%;
+    margin: 20px 0;
+    font-size: 16px;
+    font-weight: 800;
+}
