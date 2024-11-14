@@ -14,6 +14,14 @@ const db = mysql.createConnection({
     database: "medical_device"
 }) // separate database files
 
+db.connect(err => {
+    if (err) {
+        console.log("Database connection failed")
+        return;
+    }
+    console.log('Connection to database')
+})
+
 app.post('/login', (req, res) => {
     const value = [
         req.body.user,
@@ -23,28 +31,19 @@ app.post('/login', (req, res) => {
 
     db.query(sql, value, (err, data) => {
         if (err) {
-            console.log("Error database")
+            console.log("Error")
+            
         }
         if (data.length > 0) {
             console.log("Login Successfuly")
-            res.json({success: true, data})
-        }else {
+            res.json({ success: true, data })
+        } else {
             console.log("No user found in credentials.")
-            res.json({message: "Invalid user or password"})
+            res.json({ message: "Invalid user or password" })
         }
     })
 
 })
-
-
-db.connect(err => {
-    if (err) {
-        console.log("Database connection failed")
-        return;
-    }
-    console.log('Connection to database')
-})
-
 app.listen(5000, () => {
     console.log("Server is running on http://localhost:5000")
 })

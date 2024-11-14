@@ -1,14 +1,24 @@
 import { useState } from 'react';
-import './css/LoginPage.css'
+import '../css/LoginPage.css'
 import axios from 'axios'
+import Swal from 'sweetalert2';
+
 export default function LoginPage() {
     const [user, setuser] = useState('')
     const [pw, setpw] = useState('')
     const onSubmit = e => {
         e.preventDefault();
         axios.post("http://localhost:5000/login", {user, pw})
-        .then(data => console.log(data))
-        .catch(err => console.log(err))
+        .then(res => {
+            Swal.fire({
+                title: "เข้าสู่ระบบ",
+                icon: "success"
+            })
+            console.log(res.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 
     return (
