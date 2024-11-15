@@ -1,6 +1,7 @@
 const express = require("express")
 const mysql = require("mysql")
 const cors = require("cors")
+const jwt = require('jsonwebtoken')
 
 const app = express()
 
@@ -23,23 +24,22 @@ db.connect(err => {
 })
 
 app.post('/login', (req, res) => {
-    const value = [
-        req.body.user,
-        req.body.pw
-    ]
+    const { username, password } = req.body
     const sql = "SELECT * FROM `aduser` WHERE email = ? AND password = ?";
 
-    db.query(sql, value, (err, data) => {
+    db.query(sql, [username, password], (err, data) => {
         if (err) {
             console.log("Error")
+            res.status(500).json({message: "database query error", error: err})
             
         }
-        if (data.length > 0) {
+        if (data && data.length > 0) {
+            const token = jwt.sign({username}, '', {expiresIn: '1h'})
             console.log("Login Successfuly")
-            res.json({ success: true, data })
+            res.json({success: true, token})
         } else {
-            console.log("No user found in credentials.")
-            res.json({ message: "Invalid user or password" })
+            console.log("Unable To Login")
+            res.json({success: false, message: "Invalid user or password"})
         }
     })
 
