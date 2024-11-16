@@ -30,16 +30,16 @@ app.post('/login', (req, res) => {
     db.query(sql, [username, password], (err, data) => {
         if (err) {
             console.log("Error")
-            res.status(500).json({message: "database query error", error: err})
-            
+            res.status(500).json({ message: "database query error", error: err })
+
         }
         if (data && data.length > 0) {
-            const token = jwt.sign({username}, '', {expiresIn: '1h'})
+            const token = jwt.sign({ username }, '', { expiresIn: '1h' })
             console.log("Login Successfuly")
-            res.json({success: true, token})
+            res.json({ success: true, token })
         } else {
             console.log("Unable To Login")
-            res.json({success: false, message: "Invalid user or password"})
+            res.json({ success: false, message: "Invalid user or password" })
         }
     })
 

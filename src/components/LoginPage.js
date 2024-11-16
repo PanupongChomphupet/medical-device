@@ -11,7 +11,7 @@ export default function LoginPage() {
     })
 
     const handleInput = (e) => {
-        setvalue(prev => ({...prev, [e.target.name]: [e.target.value]}))
+        setvalue(prev => ({ ...prev, [e.target.name]: [e.target.value] }))
     }
 
     const navigate = useNavigate();
@@ -29,7 +29,7 @@ export default function LoginPage() {
                     })
                     localStorage.setItem('token', res.data.token)
                     navigate('/dashboard')
-                }else {
+                } else {
                     Swal.fire({
                         title: "เข้าสู้ระบบไม่สำเร็จ",
                         text: "ชื่อผู้ใช่หรือรหัสผ่านไม่ถูกต้อง",

@@ -1,0 +1,63 @@
+.nav-background {
+    background: rgb(255, 255, 255);
+    height: 100vh;
+    padding: 30px;
+    width: max-content;
+    box-sizing: border-box;
+    box-shadow: 5px 0 10px rgb(212, 212, 212);
+}
+
+.nav-logo {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    align-items: center;
+    padding: 30px;
+    gap: 10px;
+}
+
+.nav-logo p {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.nav-logo img {
+    width: 145px;
+    height: auto;
+}
+
+.nav-menubar {
+    font-size: 18px;
+    width: 100%;
+}
+
+.nav-menubar ul {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-menubar ul{
+    margin: 30px 0;
+    padding: 20px 0;
+}
+.nav-menubar ul li{
+    padding: 30px 0;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.nav-menubar ul a {
+    text-decoration: none;
+    color: black;
+}
+/* -------------------------------------- */
+/* dasboard page */
+
+.bg.dashboard {
+    background-color: #3748FF;
+    border-radius: 25px;
+} 
+.bg.dashboard a {
+    color: white;
+}
+
+/* ---------------------------------------- */
