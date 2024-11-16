@@ -11,9 +11,22 @@ export default function Dashboard() {
             navigate('/')
         }
     }, [navigate])
+    const dashboardSty = {
+        display: 'flex',
+    };
+    const dashpagesty = {
+        margin: '30px',
+
+    }
+
     return (
         <div className='dashboard-page'>
-            <Navbar />
+            <div className="flex" style={dashboardSty}>
+                <Navbar />
+                <div className="dashboard-content">
+                    <h1 style={dashpagesty}>DasboardPage</h1>
+                </div>
+            </div>
         </div>
     )
 }

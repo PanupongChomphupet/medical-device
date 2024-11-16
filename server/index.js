@@ -20,7 +20,6 @@ db.connect(err => {
         console.log("Database connection failed")
         return;
     }
-    console.log('Connection to database')
 })
 
 app.post('/login', (req, res) => {
@@ -35,10 +34,10 @@ app.post('/login', (req, res) => {
         }
         if (data && data.length > 0) {
             const token = jwt.sign({ username }, '', { expiresIn: '1h' })
-            console.log("Login Successfuly")
+            console.log("Successfuly")
             res.json({ success: true, token })
         } else {
-            console.log("Unable To Login")
+            console.log("Unable")
             res.json({ success: false, message: "Invalid user or password" })
         }
     })

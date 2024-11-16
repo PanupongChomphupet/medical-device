@@ -36,26 +36,39 @@
     text-align: center;
 }
 
-.nav-menubar ul{
+.nav-menubar ul {
     margin: 30px 0;
     padding: 20px 0;
 }
-.nav-menubar ul li{
+
+.nav-menubar ul li {
     padding: 30px 0;
     margin: 10px 0;
     cursor: pointer;
 }
+
 .nav-menubar ul a {
     text-decoration: none;
     color: black;
 }
+
+.nav-menubar ul li:hover {
+    background: rgba(55, 72, 255, 0.7);
+    border-radius: 25px;
+}
+
+.nav-menubar ul li:hover a {
+    color: white;
+}
+
 /* -------------------------------------- */
 /* dasboard page */
 
 .bg.dashboard {
-    background-color: #3748FF;
+    background-color: rgb(55, 72, 255);
     border-radius: 25px;
-} 
+}
+
 .bg.dashboard a {
     color: white;
 }
