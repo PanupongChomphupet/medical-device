@@ -7,8 +7,23 @@
     width: 100%;
 }
 .dashboard-content .header {
-    display: block;
-    margin: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.dashboard-content .header button {
+    padding: 10px 0;
+    width: 120px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    background: rgb(13, 161, 0);
+    color: white;
+    box-shadow: 1px 1px 10px rgb(122, 122, 122);
+}
+
+.dashboard-content .header button:hover {
+    font-size: 20px;
 }
 
 .dashboard-content .content {

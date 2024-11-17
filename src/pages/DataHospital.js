@@ -1,18 +1,30 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar';
 
 import '../css/DataHospital.css'
+import axios from 'axios';
 
 export default function DataHospital() {
     const navigate = useNavigate();
+    const [selectOption, setSlectOption] = useState({})
 
     useEffect(() => {
         const token = localStorage.getItem('token')
         if (!token) {
             navigate('/')
         }
+        getData()
     }, [navigate])
+
+    const getData = () => {
+        axios.get('http://localhost:5000/getDataTable')
+        .then(res => {
+            setSlectOption(res.data)
+        }).catch(err => {
+            console.log(err)
+        })
+    }
 
     return (
         <div className='dashboard-page'>
@@ -20,13 +32,14 @@ export default function DataHospital() {
                 <Navbar />
                 <div className="dashboard-content">
                     <div className="header">
-                        <h1>Dashboard</h1>
+                        <h1>โรงพยาบาล</h1>
+                        <button>เพิ่ม</button>
                     </div>
                     <div className="content">
-                        <h2>โรงพยาบาล</h2>
                         <table className='tablesty'>
                             <thead>
                                 <tr>
+                                    {console.log(selectOption)}
                                     <th>Id</th>
                                     <th>ชื่อโรงพยาบาล</th>
                                     <th>ที่อยู่</th>

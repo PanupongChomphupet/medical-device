@@ -28,7 +28,7 @@ export default function LoginPage() {
                         timer: 1500
                     })
                     localStorage.setItem('token', res.data.token)
-                    navigate('/dashboard')
+                    navigate('/data-hospital')
                 } else {
                     Swal.fire({
                         title: "เข้าสู้ระบบไม่สำเร็จ",

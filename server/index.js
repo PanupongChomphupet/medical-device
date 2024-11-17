@@ -33,7 +33,7 @@ app.post('/login', (req, res) => {
 
         }
         if (data && data.length > 0) {
-            const token = jwt.sign({ username }, 'yourSecretKey', { expiresIn: '1h' })
+            const token = jwt.sign({ username }, '', { expiresIn: '1h' })
             console.log("Successfuly")
             res.json({ success: true, token })
         } else {
@@ -42,6 +42,17 @@ app.post('/login', (req, res) => {
         }
     })
 
+})
+
+app.get('/getDataTable', (req, res) => {
+    const sql = "SELECT * FROM `hospital` WHERE 1";
+    db.query(sql, (err, data) => {
+        if (err) {
+            console.log("ERROR")
+            res.status(500).json({message: "not found data in database"})
+        }
+        res.json({data})
+    })
 })
 app.listen(5000, () => {
     console.log("Server is running on http://localhost:5000")
