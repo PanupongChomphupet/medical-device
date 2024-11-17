@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #aaaaaa;
+    background: #dfdfdf;
 }
 
 .backgroud form  {
@@ -37,4 +37,7 @@ form .btn button {
     margin: 20px 0;
     font-size: 16px;
     font-weight: 800;
+    background: rgb(55, 72, 255);
+    border: none;
+    color: white
 }

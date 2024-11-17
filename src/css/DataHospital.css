@@ -1,0 +1,29 @@
+.display-flex {
+    display: flex;
+    gap: 10px;
+}
+
+.dashboard-content {
+    width: 100%;
+}
+.dashboard-content .header {
+    display: block;
+    margin: 10px 10px;
+}
+
+.dashboard-content .content {
+    margin: 10px 10px;
+}
+
+/* table styles */
+.tablesty {
+    margin: 10px 0;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 18px;
+}
+.tablesty thead th,
+.tablesty tbody td {
+    border: 2px solid;
+    padding: 10px 10px;
+}

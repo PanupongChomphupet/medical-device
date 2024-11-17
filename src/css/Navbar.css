@@ -42,35 +42,33 @@
 }
 
 .nav-menubar ul li {
-    padding: 30px 0;
-    margin: 10px 0;
-    cursor: pointer;
+    position: relative;
+    margin: 10px 0; 
+    height: 60px;
+    
 }
 
 .nav-menubar ul a {
+    display: block;
     text-decoration: none;
     color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-menubar ul li:hover {
-    background: rgba(55, 72, 255, 0.7);
-    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
-.nav-menubar ul li:hover a {
+.nav-menubar ul li.active {
+    background-color: rgb(55, 75, 255);
+    border-radius: 25px;
     color: white;
 }
-
-/* -------------------------------------- */
-/* dasboard page */
-
-.bg.dashboard {
-    background-color: rgb(55, 72, 255);
-    border-radius: 25px;
-}
-
-.bg.dashboard a {
+.nav-menubar ul li.active a {
     color: white;
 }
-
-/* ---------------------------------------- */

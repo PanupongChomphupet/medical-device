@@ -52,11 +52,11 @@ export default function LoginPage() {
                     <h1>Admin</h1>
                     <div className="input-form">
                         <label htmlFor="">username</label>
-                        <input type="text" name='username' onChange={handleInput} />
+                        <input type="text" name='username' onChange={handleInput} required />
                     </div>
                     <div className="input-form">
                         <label htmlFor="">password</label>
-                        <input type="password" name='password' onChange={handleInput} />
+                        <input type="password" name='password' onChange={handleInput} required/>
                     </div>
                     <div className="btn">
                         <button>Login</button>

@@ -24,7 +24,7 @@ db.connect(err => {
 
 app.post('/login', (req, res) => {
     const { username, password } = req.body
-    const sql = "SELECT * FROM `aduser` WHERE email = ? AND password = ?";
+    const sql = "SELECT * FROM `admin` WHERE User = ? AND Password = ?";
 
     db.query(sql, [username, password], (err, data) => {
         if (err) {
@@ -33,7 +33,7 @@ app.post('/login', (req, res) => {
 
         }
         if (data && data.length > 0) {
-            const token = jwt.sign({ username }, '', { expiresIn: '1h' })
+            const token = jwt.sign({ username }, 'yourSecretKey', { expiresIn: '1h' })
             console.log("Successfuly")
             res.json({ success: true, token })
         } else {
